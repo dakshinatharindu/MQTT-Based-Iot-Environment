@@ -1,0 +1,3343 @@
+[
+    {
+        "id": "d36d8b6db990182d",
+        "type": "tab",
+        "label": "Flow 10",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1d4dbaa98d03a29e",
+        "type": "mqtt in",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "topic": "/task_02d/#",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "50043083ec2e0868",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 400,
+        "wires": [
+            [
+                "7d6d2a26e764222c"
+            ]
+        ]
+    },
+    {
+        "id": "92db535303d912a4",
+        "type": "switch",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/task_02d/power01",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/task_02d/humid01",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/task_02d/humid02",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/task_02d/gas01",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/task_02d/motion01",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/task_02d/motion02",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/task_02d/temp01",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/task_02d/temp02",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/task_02d/smoke01",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/task_02d/security01",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 10,
+        "x": 490,
+        "y": 400,
+        "wires": [
+            [
+                "4fd362a7900269e5"
+            ],
+            [
+                "148fc14fe83b6ddf"
+            ],
+            [
+                "b93b2ff3869b8802"
+            ],
+            [
+                "48fdbf4b6c621301"
+            ],
+            [
+                "fa6478956ce4607d"
+            ],
+            [
+                "3e8415816ac0189f"
+            ],
+            [
+                "6abb3e5f416b63ae"
+            ],
+            [
+                "b3ca9c627e250579"
+            ],
+            [
+                "1ad78c5461f5ab07"
+            ],
+            [
+                "1ef4beafde7134dd"
+            ]
+        ]
+    },
+    {
+        "id": "0bde54d07a31eff6",
+        "type": "debug",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "b88a8386ea2cd338",
+        "type": "ui_toast",
+        "z": "d36d8b6db990182d",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "raw": false,
+        "className": "",
+        "topic": "Notification",
+        "name": "",
+        "x": 590,
+        "y": 1000,
+        "wires": [
+            []
+        ],
+        "info": "{\n    \"hi\"\n}"
+    },
+    {
+        "id": "3045e06205f8f221",
+        "type": "ui_gauge",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a336382dc7a34e40",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Humidity 01",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 970,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "755aff3dcaad6bf7",
+        "type": "ui_gauge",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a336382dc7a34e40",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Humidity 02",
+        "label": "%",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 970,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "929e94aa8c80ae36",
+        "type": "ui_gauge",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "560f8fd85a941b67",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "wave",
+        "title": "Gas",
+        "label": " ppm",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1810,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "7ef3690efb5a9922",
+        "type": "ui_gauge",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a094c0f9e38aef50",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Temperature 01",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1460,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "2818e6eab7b764ed",
+        "type": "ui_gauge",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a094c0f9e38aef50",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Temperature 02",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1460,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "4d854b81c7ad13d5",
+        "type": "ui_gauge",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a3a1faa40525caa7",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Smoke",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6de00",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1860,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "bb2798b372bf0e13",
+        "type": "ui_button",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "17ad4fed28684a7f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reset All Meters",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1900,
+        "y": 700,
+        "wires": [
+            [
+                "5d6c07bfaf3d150a"
+            ]
+        ]
+    },
+    {
+        "id": "e6eed821711b0e61",
+        "type": "ui_audio",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "17ad4fed28684a7f",
+        "voice": "Microsoft Zira - English (United States)",
+        "always": "",
+        "x": 580,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "a580b1df26aa5121",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "create messgae",
+        "func": "var s = (new Date()).toTimeString().substr(0,8);\nif (msg.payload==1){\n    msg.payload = \"Security breach!!!\";\n    msg.topic = \"Security Breach\";\n    msg.email = \"There was a security breach at \" + s;\n}\nreturn msg;\n\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 1000,
+        "wires": [
+            [
+                "b88a8386ea2cd338",
+                "e6eed821711b0e61",
+                "e9a73252b1ee02ef"
+            ]
+        ]
+    },
+    {
+        "id": "2e5c6419085e86f6",
+        "type": "ui_chart",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a3a1faa40525caa7",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "1000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1eb0b3",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1850,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cbdb3af8378f5f00",
+        "type": "ui_chart",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a094c0f9e38aef50",
+        "order": 3,
+        "width": 6,
+        "height": 4,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "40",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1430,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "02eff83e778b5665",
+        "type": "ui_chart",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "560f8fd85a941b67",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "1000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1810,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b34d15976cac500d",
+        "type": "ui_chart",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a336382dc7a34e40",
+        "order": 3,
+        "width": 6,
+        "height": 4,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 950,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a1b9468049f9d1bc",
+        "type": "ui_chart",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a336382dc7a34e40",
+        "order": 4,
+        "width": 6,
+        "height": 4,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 950,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "062fe2e5821f23b7",
+        "type": "ui_chart",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "6786c147f8d470f4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "1000",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 990,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7d6d2a26e764222c",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "Rounding",
+        "func": "if ((msg.topic == \"/task_02d/motion01\") || (msg.topic == \"/task_02d/motion02\") || (msg.topic == \"/task_02d/security01\")) {\n    msg.payload = parseInt(msg.payload);\n} else {\n    msg.payload = parseFloat(msg.payload).toFixed(2);\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 400,
+        "wires": [
+            [
+                "92db535303d912a4",
+                "0bde54d07a31eff6"
+            ]
+        ]
+    },
+    {
+        "id": "6c3ef908e7f3d9c0",
+        "type": "ui_gauge",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "6786c147f8d470f4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Power",
+        "label": "W",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 990,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "eb19ef1955230df4",
+        "type": "ui_button",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "17ad4fed28684a7f",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Reset All Charts",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1900,
+        "y": 740,
+        "wires": [
+            [
+                "2edddf4424816cb2"
+            ]
+        ]
+    },
+    {
+        "id": "71769b6d7e40f21f",
+        "type": "ui_chart",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a094c0f9e38aef50",
+        "order": 4,
+        "width": 6,
+        "height": 4,
+        "label": "",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "40",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1430,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2b4a0e10eaaf8a10",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Power Gauge",
+        "links": [
+            "5d6c07bfaf3d150a",
+            "4fd362a7900269e5"
+        ],
+        "x": 895,
+        "y": 160,
+        "wires": [
+            [
+                "6c3ef908e7f3d9c0"
+            ]
+        ]
+    },
+    {
+        "id": "373ccc3e8b655f42",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Power Chart",
+        "links": [
+            "2edddf4424816cb2",
+            "4fd362a7900269e5"
+        ],
+        "x": 895,
+        "y": 200,
+        "wires": [
+            [
+                "062fe2e5821f23b7"
+            ]
+        ]
+    },
+    {
+        "id": "5d6c07bfaf3d150a",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "All Reset Gauges",
+        "mode": "link",
+        "links": [
+            "191a95e96d8643c4",
+            "1d3ccef313146b8c",
+            "2b4a0e10eaaf8a10",
+            "d612154ca875aeba",
+            "edfb0650d04e4721",
+            "902ca6c825bf1283",
+            "6a53a69dbadecaa8"
+        ],
+        "x": 2015,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "2edddf4424816cb2",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "All Reset Charts",
+        "mode": "link",
+        "links": [
+            "373ccc3e8b655f42",
+            "86373677fb9189a1",
+            "a76069845c726177",
+            "a9977ad935357b68",
+            "bd79cf8cdd453484",
+            "c31f41da0772142b",
+            "ea4773f0edaf5f04"
+        ],
+        "x": 2015,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "4fd362a7900269e5",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Power In",
+        "mode": "link",
+        "links": [
+            "2b4a0e10eaaf8a10",
+            "373ccc3e8b655f42",
+            "89487b04ac041bc3"
+        ],
+        "x": 635,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "148fc14fe83b6ddf",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Humidity-01 In",
+        "mode": "link",
+        "links": [
+            "1d3ccef313146b8c",
+            "bd79cf8cdd453484",
+            "736bd1d55b0b50c0",
+            "eedac3f3460c0953"
+        ],
+        "x": 635,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "1d3ccef313146b8c",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Humidity-01 Gauge",
+        "links": [
+            "148fc14fe83b6ddf",
+            "5d6c07bfaf3d150a"
+        ],
+        "x": 855,
+        "y": 440,
+        "wires": [
+            [
+                "3045e06205f8f221"
+            ]
+        ]
+    },
+    {
+        "id": "bd79cf8cdd453484",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Humidity-01 Chart",
+        "links": [
+            "148fc14fe83b6ddf",
+            "2edddf4424816cb2"
+        ],
+        "x": 855,
+        "y": 480,
+        "wires": [
+            [
+                "b34d15976cac500d"
+            ]
+        ]
+    },
+    {
+        "id": "191a95e96d8643c4",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Humidity-02 Gauge",
+        "links": [
+            "5d6c07bfaf3d150a",
+            "b93b2ff3869b8802"
+        ],
+        "x": 855,
+        "y": 520,
+        "wires": [
+            [
+                "755aff3dcaad6bf7"
+            ]
+        ]
+    },
+    {
+        "id": "c31f41da0772142b",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Humidity-02 Chart",
+        "links": [
+            "b93b2ff3869b8802",
+            "2edddf4424816cb2"
+        ],
+        "x": 855,
+        "y": 560,
+        "wires": [
+            [
+                "a1b9468049f9d1bc"
+            ]
+        ]
+    },
+    {
+        "id": "b93b2ff3869b8802",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Humidity-02 In",
+        "mode": "link",
+        "links": [
+            "191a95e96d8643c4",
+            "c31f41da0772142b",
+            "f5bce689a9e9d1bb"
+        ],
+        "x": 635,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d612154ca875aeba",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Gas Gauge",
+        "links": [
+            "48fdbf4b6c621301",
+            "5d6c07bfaf3d150a"
+        ],
+        "x": 1715,
+        "y": 160,
+        "wires": [
+            [
+                "929e94aa8c80ae36"
+            ]
+        ]
+    },
+    {
+        "id": "a76069845c726177",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Humidity-02 Chart",
+        "links": [
+            "2edddf4424816cb2",
+            "48fdbf4b6c621301"
+        ],
+        "x": 1715,
+        "y": 200,
+        "wires": [
+            [
+                "02eff83e778b5665"
+            ]
+        ]
+    },
+    {
+        "id": "48fdbf4b6c621301",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Gas In",
+        "mode": "link",
+        "links": [
+            "d612154ca875aeba",
+            "a76069845c726177",
+            "b145d9fbd3f498cb"
+        ],
+        "x": 635,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "edfb0650d04e4721",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Temp-01 Gauge",
+        "links": [
+            "5d6c07bfaf3d150a",
+            "6abb3e5f416b63ae"
+        ],
+        "x": 1335,
+        "y": 440,
+        "wires": [
+            [
+                "7ef3690efb5a9922"
+            ]
+        ]
+    },
+    {
+        "id": "86373677fb9189a1",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Temp-01 Chart",
+        "links": [
+            "2edddf4424816cb2",
+            "6abb3e5f416b63ae"
+        ],
+        "x": 1335,
+        "y": 480,
+        "wires": [
+            [
+                "cbdb3af8378f5f00"
+            ]
+        ]
+    },
+    {
+        "id": "902ca6c825bf1283",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Temp-02 Gauge",
+        "links": [
+            "5d6c07bfaf3d150a",
+            "b3ca9c627e250579"
+        ],
+        "x": 1335,
+        "y": 520,
+        "wires": [
+            [
+                "2818e6eab7b764ed"
+            ]
+        ]
+    },
+    {
+        "id": "a9977ad935357b68",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Temp-02 Chart",
+        "links": [
+            "2edddf4424816cb2",
+            "b3ca9c627e250579"
+        ],
+        "x": 1335,
+        "y": 560,
+        "wires": [
+            [
+                "71769b6d7e40f21f"
+            ]
+        ]
+    },
+    {
+        "id": "6abb3e5f416b63ae",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Temp-01 In",
+        "mode": "link",
+        "links": [
+            "edfb0650d04e4721",
+            "86373677fb9189a1",
+            "ddd27b60381572ab"
+        ],
+        "x": 635,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "b3ca9c627e250579",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Temp-02 In",
+        "mode": "link",
+        "links": [
+            "902ca6c825bf1283",
+            "a9977ad935357b68",
+            "51752aa712b5a26a"
+        ],
+        "x": 635,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "1ad78c5461f5ab07",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Smoke In",
+        "mode": "link",
+        "links": [
+            "6a53a69dbadecaa8",
+            "ea4773f0edaf5f04",
+            "0c474ed7588f651a"
+        ],
+        "x": 635,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "6a53a69dbadecaa8",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Smoke Gauge",
+        "links": [
+            "1ad78c5461f5ab07",
+            "5d6c07bfaf3d150a"
+        ],
+        "x": 1755,
+        "y": 500,
+        "wires": [
+            [
+                "4d854b81c7ad13d5"
+            ]
+        ]
+    },
+    {
+        "id": "ea4773f0edaf5f04",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Smoke Chart",
+        "links": [
+            "1ad78c5461f5ab07",
+            "2edddf4424816cb2"
+        ],
+        "x": 1755,
+        "y": 540,
+        "wires": [
+            [
+                "2e5c6419085e86f6"
+            ]
+        ]
+    },
+    {
+        "id": "43f720458c8ebfe4",
+        "type": "ui_button",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "6786c147f8d470f4",
+        "order": 4,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Reset Power",
+        "tooltip": "Reset Power Gauge and Chart",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "restore",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 950,
+        "y": 100,
+        "wires": [
+            [
+                "6c3ef908e7f3d9c0",
+                "ec85a647436da7a3"
+            ]
+        ]
+    },
+    {
+        "id": "ec85a647436da7a3",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "Reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1110,
+        "y": 100,
+        "wires": [
+            [
+                "062fe2e5821f23b7"
+            ]
+        ]
+    },
+    {
+        "id": "6da1f1902938ca98",
+        "type": "ui_button",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a336382dc7a34e40",
+        "order": 6,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Reset Humidity 01",
+        "tooltip": "Reset Humidity 01 Gauge and Chart",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "restore",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 930,
+        "y": 380,
+        "wires": [
+            [
+                "fa9d6eee4a7aa060",
+                "3045e06205f8f221"
+            ]
+        ]
+    },
+    {
+        "id": "fa9d6eee4a7aa060",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "Reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 380,
+        "wires": [
+            [
+                "b34d15976cac500d"
+            ]
+        ]
+    },
+    {
+        "id": "852407a451f5552a",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "Reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 620,
+        "wires": [
+            [
+                "a1b9468049f9d1bc"
+            ]
+        ]
+    },
+    {
+        "id": "6b119998629c8955",
+        "type": "ui_button",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a336382dc7a34e40",
+        "order": 8,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Reset Humidity 02",
+        "tooltip": "Reset Humidity 01 Gauge and Chart",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "restore",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 930,
+        "y": 620,
+        "wires": [
+            [
+                "852407a451f5552a",
+                "755aff3dcaad6bf7"
+            ]
+        ]
+    },
+    {
+        "id": "9e4452337017846f",
+        "type": "ui_button",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "560f8fd85a941b67",
+        "order": 4,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Reset Gas",
+        "tooltip": "Reset Gas Gauge and Chart",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "restore",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1770,
+        "y": 100,
+        "wires": [
+            [
+                "c55daf84fdb7f901",
+                "929e94aa8c80ae36"
+            ]
+        ]
+    },
+    {
+        "id": "c55daf84fdb7f901",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "Reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1930,
+        "y": 100,
+        "wires": [
+            [
+                "02eff83e778b5665"
+            ]
+        ]
+    },
+    {
+        "id": "73eacc9a1f318ca3",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "Reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1550,
+        "y": 380,
+        "wires": [
+            [
+                "cbdb3af8378f5f00"
+            ]
+        ]
+    },
+    {
+        "id": "c1b162d93a12d820",
+        "type": "ui_button",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a094c0f9e38aef50",
+        "order": 6,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Reset Temp 01",
+        "tooltip": "Reset Temperature 01 Gauge and Chart",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "restore",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1380,
+        "y": 380,
+        "wires": [
+            [
+                "73eacc9a1f318ca3",
+                "7ef3690efb5a9922"
+            ]
+        ]
+    },
+    {
+        "id": "67307bc133edf6f2",
+        "type": "ui_button",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a094c0f9e38aef50",
+        "order": 8,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Reset Temp 02",
+        "tooltip": "Reset Temperature 02 Gauge and Chart",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "restore",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1360,
+        "y": 620,
+        "wires": [
+            [
+                "d916969dbd8a9260",
+                "2818e6eab7b764ed"
+            ]
+        ]
+    },
+    {
+        "id": "d916969dbd8a9260",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "Reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1530,
+        "y": 620,
+        "wires": [
+            [
+                "71769b6d7e40f21f"
+            ]
+        ]
+    },
+    {
+        "id": "a587581b2525ac5c",
+        "type": "ui_button",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a3a1faa40525caa7",
+        "order": 4,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Reset Smoke",
+        "tooltip": "Reset Smoke Gauge and Chart",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "restore",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1820,
+        "y": 460,
+        "wires": [
+            [
+                "ab7d1144c4e7cf24",
+                "4d854b81c7ad13d5"
+            ]
+        ]
+    },
+    {
+        "id": "ab7d1144c4e7cf24",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "Reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1990,
+        "y": 460,
+        "wires": [
+            [
+                "2e5c6419085e86f6"
+            ]
+        ]
+    },
+    {
+        "id": "fa6478956ce4607d",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Motion 01 In",
+        "mode": "link",
+        "links": [
+            "cf23f8db3d58662d",
+            "3be92e9fc90737df"
+        ],
+        "x": 635,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "3e8415816ac0189f",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Motion 02 In",
+        "mode": "link",
+        "links": [
+            "9181a169f960a892",
+            "58466b1b17a9b02e"
+        ],
+        "x": 635,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "4df1ee7bbac39da3",
+        "type": "inject",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 510,
+        "y": 600,
+        "wires": [
+            [
+                "1ef4beafde7134dd"
+            ]
+        ]
+    },
+    {
+        "id": "017e0d96ea4721ea",
+        "type": "e-mail",
+        "z": "d36d8b6db990182d",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "dakshina753@gmail.com",
+        "dname": "",
+        "x": 550,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "9448c79db64f267c",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Email",
+        "links": [
+            "b344e704c0d02f20",
+            "e9a73252b1ee02ef",
+            "1d3f327b836a81db",
+            "02a11cc4cf9ae7c2",
+            "78903860567a4c04",
+            "3be7e2810dd8e04a",
+            "edbff8c8d4368803",
+            "38b49da82150927e",
+            "bf8569c34298aed9"
+        ],
+        "x": 195,
+        "y": 100,
+        "wires": [
+            [
+                "52a80aff8cea9352"
+            ]
+        ]
+    },
+    {
+        "id": "685c8acc56cca29b",
+        "type": "rpi-gpio out",
+        "z": "d36d8b6db990182d",
+        "name": "Buzzer",
+        "pin": "14",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 680,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "0fd2a578dabed47d",
+        "type": "delay",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 330,
+        "y": 860,
+        "wires": [
+            [
+                "95c7111025110c86"
+            ]
+        ]
+    },
+    {
+        "id": "1ef4beafde7134dd",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Security In",
+        "mode": "link",
+        "links": [
+            "5af0754195ce0a35"
+        ],
+        "x": 635,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "5af0754195ce0a35",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Security",
+        "links": [
+            "1ef4beafde7134dd"
+        ],
+        "x": 85,
+        "y": 920,
+        "wires": [
+            [
+                "a580b1df26aa5121",
+                "b59ee85ac94edeb7",
+                "0fd2a578dabed47d"
+            ]
+        ]
+    },
+    {
+        "id": "b59ee85ac94edeb7",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "startBlink",
+        "func": "var BLINKDELAY = 250;\n\nvar light = true;\n\n\nvar blinker = setInterval(blink, BLINKDELAY);\n\nglobal.set(\"blinker\", blinker);\n\nfunction blink () {\n    \n    if (light) {\n        msg.payload = 1;\n        light = false;\n    }\n    \n    else {\n        msg.payload = 0;\n        light = true;\n    }\n    \n    node.send(msg);\n}\n\n\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 920,
+        "wires": [
+            [
+                "685c8acc56cca29b"
+            ]
+        ]
+    },
+    {
+        "id": "95c7111025110c86",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "stopBlink",
+        "func": "clearInterval(global.get(\"blinker\"));\n\nmsg.payload = 0;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 860,
+        "wires": [
+            [
+                "685c8acc56cca29b"
+            ]
+        ]
+    },
+    {
+        "id": "ce3b0251eea88325",
+        "type": "rpi-gpio in",
+        "z": "d36d8b6db990182d",
+        "name": "Reset Push Button",
+        "pin": "15",
+        "intype": "up",
+        "debounce": "25",
+        "read": false,
+        "bcm": true,
+        "x": 350,
+        "y": 800,
+        "wires": [
+            [
+                "95c7111025110c86",
+                "398f1ff76819bbdd"
+            ]
+        ]
+    },
+    {
+        "id": "e9a73252b1ee02ef",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Security Out",
+        "mode": "link",
+        "links": [
+            "9448c79db64f267c",
+            "f2257a888071a358"
+        ],
+        "x": 485,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "f2257a888071a358",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Log",
+        "links": [
+            "02a11cc4cf9ae7c2",
+            "1d3f327b836a81db",
+            "e9a73252b1ee02ef",
+            "78903860567a4c04",
+            "6c067f91e1ca8dc8",
+            "fc71efccf475791c",
+            "21cd27ef965a4c5f",
+            "d76d90abd654a7c5",
+            "9a1576da51047f84",
+            "3be7e2810dd8e04a",
+            "edbff8c8d4368803",
+            "38b49da82150927e",
+            "bf8569c34298aed9"
+        ],
+        "x": 1055,
+        "y": 840,
+        "wires": [
+            [
+                "f1009c8e0f4cb72d"
+            ]
+        ]
+    },
+    {
+        "id": "f1009c8e0f4cb72d",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "update log array",
+        "func": "if (global.get(\"log\") == undefined) {\n    let arr = [\"\",\"\",\"\",\"\",\"\"];\n  global.set(\"log\",arr);\n}\nvar s = (new Date()).toTimeString().substr(0,8);\nconst x = global.get(\"log\");\nx.pop();\nx.unshift(s + \" -> \" + msg.payload)\nmsg.payload = x;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1210,
+        "y": 840,
+        "wires": [
+            [
+                "041cece3cac51c1d"
+            ]
+        ]
+    },
+    {
+        "id": "041cece3cac51c1d",
+        "type": "ui_template",
+        "z": "d36d8b6db990182d",
+        "group": "b8630066.5d446",
+        "name": "Log",
+        "order": 1,
+        "width": 6,
+        "height": 5,
+        "format": "<table id=\"table\" >\n    <tbody>\n        <tr>\n            <td class=\"string\" >{{msg.payload[0]}}</td>\n        </tr>\n        <tr>\n            <td class=\"string\" >{{msg.payload[1]}}</td>\n        </tr>\n        <tr>\n            <td class=\"string\" >{{msg.payload[2]}}</td>\n        </tr>\n        <tr>\n            <td class=\"string\" >{{msg.payload[3]}}</td>\n        </tr>\n        <tr>\n            <td class=\"string\" >{{msg.payload[4]}}</td>\n        </tr>\n    </tbody>\n</table>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1400,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7dc5ccb948589091",
+        "type": "ui_button",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "b8630066.5d446",
+        "order": 3,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Clear Log",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "[\"\",\"\",\"\",\"\",\"\"]",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1090,
+        "y": 920,
+        "wires": [
+            [
+                "afefb33ecff7face"
+            ]
+        ]
+    },
+    {
+        "id": "afefb33ecff7face",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "clear global log array",
+        "func": "if (global.get(\"log\") != undefined) {\n    global.set(\"log\", msg.payload);\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1290,
+        "y": 920,
+        "wires": [
+            [
+                "041cece3cac51c1d"
+            ]
+        ]
+    },
+    {
+        "id": "89d74ccbaba2c120",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "create message",
+        "func": "var s = (new Date()).toTimeString().substr(0,8);\nif (msg.payload > 1000){\n    msg.payload = \"Power exceed 1000W.\";\n    msg.topic = \"Power Failure\";\n    msg.email = \"There was a power failure at \" + s;\n    global.set(\"power\", true);\n    node.send(msg);\n}\n\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 60,
+        "wires": [
+            [
+                "78903860567a4c04",
+                "359d04cfecfd6d30"
+            ]
+        ]
+    },
+    {
+        "id": "89487b04ac041bc3",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "links": [
+            "4fd362a7900269e5"
+        ],
+        "x": 895,
+        "y": 60,
+        "wires": [
+            [
+                "89d74ccbaba2c120"
+            ]
+        ]
+    },
+    {
+        "id": "52a80aff8cea9352",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "email",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "email",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "78903860567a4c04",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Power Out",
+        "mode": "link",
+        "links": [
+            "9448c79db64f267c",
+            "f2257a888071a358"
+        ],
+        "x": 1165,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "f5bce689a9e9d1bb",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "links": [
+            "b93b2ff3869b8802"
+        ],
+        "x": 855,
+        "y": 660,
+        "wires": [
+            [
+                "289b7d8de18ffe62"
+            ]
+        ]
+    },
+    {
+        "id": "289b7d8de18ffe62",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "create message",
+        "func": "var s = (new Date()).toTimeString().substr(0,8);\nif (msg.payload < 50){\n    msg.payload = \"Humidity at place 2 is below 50%.\";\n    // msg.topic = \"Low Humidity\";\n    // msg.email = \"There was a power failure at \" + s;\n    node.send(msg);\n}\n\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 660,
+        "wires": [
+            [
+                "fc71efccf475791c"
+            ]
+        ]
+    },
+    {
+        "id": "fc71efccf475791c",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Power Out",
+        "mode": "link",
+        "links": [
+            "f2257a888071a358"
+        ],
+        "x": 1125,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "a99fd8783755a23f",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "create message",
+        "func": "var s = (new Date()).toTimeString().substr(0,8);\nif (msg.payload < 50){\n    msg.payload = \"Humidity at place 1 is below 50%.\";\n    // msg.topic = \"Low Humidity\";\n    // msg.email = \"There was a power failure at \" + s;\n    node.send(msg);\n}\n\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 340,
+        "wires": [
+            [
+                "6c067f91e1ca8dc8"
+            ]
+        ]
+    },
+    {
+        "id": "6c067f91e1ca8dc8",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Power Out",
+        "mode": "link",
+        "links": [
+            "f2257a888071a358"
+        ],
+        "x": 1125,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "736bd1d55b0b50c0",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "links": [
+            "148fc14fe83b6ddf"
+        ],
+        "x": 855,
+        "y": 340,
+        "wires": [
+            [
+                "a99fd8783755a23f"
+            ]
+        ]
+    },
+    {
+        "id": "ddd27b60381572ab",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "links": [
+            "6abb3e5f416b63ae"
+        ],
+        "x": 1335,
+        "y": 340,
+        "wires": [
+            [
+                "b223d87411ec9ed7"
+            ]
+        ]
+    },
+    {
+        "id": "b223d87411ec9ed7",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "create message",
+        "func": "var s = (new Date()).toTimeString().substr(0,8);\nif (msg.payload < 20){\n    msg.payload = \"Temperature at place 1 is below 20.\";\n    // msg.topic = \"Low Humidity\";\n    // msg.email = \"There was a power failure at \" + s;\n    node.send(msg);\n}\n\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1460,
+        "y": 340,
+        "wires": [
+            [
+                "d76d90abd654a7c5"
+            ]
+        ]
+    },
+    {
+        "id": "d76d90abd654a7c5",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Power Out",
+        "mode": "link",
+        "links": [
+            "f2257a888071a358"
+        ],
+        "x": 1605,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "51752aa712b5a26a",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "links": [
+            "b3ca9c627e250579"
+        ],
+        "x": 1335,
+        "y": 660,
+        "wires": [
+            [
+                "50523acbe768dc70"
+            ]
+        ]
+    },
+    {
+        "id": "50523acbe768dc70",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "create message",
+        "func": "var s = (new Date()).toTimeString().substr(0,8);\nif (msg.payload < 20){\n    msg.payload = \"Temperature at place 2 is below 20.\";\n    // msg.topic = \"Low Humidity\";\n    // msg.email = \"There was a power failure at \" + s;\n    node.send(msg);\n}\n\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1460,
+        "y": 660,
+        "wires": [
+            [
+                "9a1576da51047f84"
+            ]
+        ]
+    },
+    {
+        "id": "9a1576da51047f84",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Power Out",
+        "mode": "link",
+        "links": [
+            "f2257a888071a358"
+        ],
+        "x": 1605,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "b145d9fbd3f498cb",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "links": [
+            "48fdbf4b6c621301"
+        ],
+        "x": 1725,
+        "y": 40,
+        "wires": [
+            [
+                "8fa94cd967d31d65"
+            ]
+        ]
+    },
+    {
+        "id": "8fa94cd967d31d65",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "create message",
+        "func": "var s = (new Date()).toTimeString().substr(0,8);\nif (msg.payload > 1000){\n    msg.payload = \"Gas Leak!!!\";\n    msg.topic = \"Gas Leak!!!\";\n    msg.email = \"There was a gas leak at \" + s;\n    global.set(\"gas\", true);\n    node.send(msg);\n}\n\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1850,
+        "y": 40,
+        "wires": [
+            [
+                "3be7e2810dd8e04a",
+                "7b0bed04ab95fed1"
+            ]
+        ]
+    },
+    {
+        "id": "3be7e2810dd8e04a",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Power Out",
+        "mode": "link",
+        "links": [
+            "9448c79db64f267c",
+            "f2257a888071a358"
+        ],
+        "x": 1995,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "774ff670ebc67035",
+        "type": "rpi-gpio out",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "pin": "18",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 1520,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "359d04cfecfd6d30",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1320,
+        "y": 120,
+        "wires": [
+            [
+                "774ff670ebc67035",
+                "651fea3ba0f90dff"
+            ]
+        ]
+    },
+    {
+        "id": "398f1ff76819bbdd",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Push Button",
+        "mode": "link",
+        "links": [
+            "c688910870c1039f",
+            "a639cb31a85592b4",
+            "9f4915dcd910deff",
+            "82e6a5c07e1f6855",
+            "053b53d081bba58a"
+        ],
+        "x": 475,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "c688910870c1039f",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "links": [
+            "398f1ff76819bbdd"
+        ],
+        "x": 1275,
+        "y": 60,
+        "wires": [
+            [
+                "bd0f18b7d6808c32"
+            ]
+        ]
+    },
+    {
+        "id": "bd0f18b7d6808c32",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "check",
+        "func": "if (global.get(\"power\") == undefined) {\n  global.set(\"power\", false);\n}\nif (global.get(\"power\") == true){\n    global.set(\"power\", false);\n    node.send(msg);\n}\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1370,
+        "y": 60,
+        "wires": [
+            [
+                "774ff670ebc67035"
+            ]
+        ]
+    },
+    {
+        "id": "651fea3ba0f90dff",
+        "type": "delay",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1310,
+        "y": 200,
+        "wires": [
+            [
+                "ee8b9f86584dd98f"
+            ]
+        ]
+    },
+    {
+        "id": "ee8b9f86584dd98f",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1480,
+        "y": 200,
+        "wires": [
+            [
+                "774ff670ebc67035"
+            ]
+        ]
+    },
+    {
+        "id": "bd7ce3d9f4153c4b",
+        "type": "rpi-gpio out",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "pin": "23",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 2340,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7b0bed04ab95fed1",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2140,
+        "y": 120,
+        "wires": [
+            [
+                "bd7ce3d9f4153c4b",
+                "7f7bf5eb0d7dc565"
+            ]
+        ]
+    },
+    {
+        "id": "a639cb31a85592b4",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "links": [
+            "398f1ff76819bbdd"
+        ],
+        "x": 2095,
+        "y": 60,
+        "wires": [
+            [
+                "f54403d0fa27456f"
+            ]
+        ]
+    },
+    {
+        "id": "f54403d0fa27456f",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "check",
+        "func": "if (global.get(\"gas\") == undefined) {\n  global.set(\"gas\", false);\n}\nif (global.get(\"gas\") == true){\n    global.set(\"gas\", false);\n    node.send(msg);\n}\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2190,
+        "y": 60,
+        "wires": [
+            [
+                "bd7ce3d9f4153c4b"
+            ]
+        ]
+    },
+    {
+        "id": "7f7bf5eb0d7dc565",
+        "type": "delay",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 2130,
+        "y": 200,
+        "wires": [
+            [
+                "785a07e05d02350d"
+            ]
+        ]
+    },
+    {
+        "id": "785a07e05d02350d",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2300,
+        "y": 200,
+        "wires": [
+            [
+                "bd7ce3d9f4153c4b"
+            ]
+        ]
+    },
+    {
+        "id": "0c474ed7588f651a",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "links": [
+            "1ad78c5461f5ab07"
+        ],
+        "x": 1755,
+        "y": 400,
+        "wires": [
+            [
+                "7dcec7837d42f381"
+            ]
+        ]
+    },
+    {
+        "id": "7dcec7837d42f381",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "create message",
+        "func": "var s = (new Date()).toTimeString().substr(0,8);\nif (msg.payload > 1000){\n    msg.payload = \"Fire!!!\";\n    msg.topic = \"Fire!!!\";\n    msg.email = \"There was a fire detected at \" + s;\n    global.set(\"fire\", true);\n    node.send(msg);\n}\n\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1880,
+        "y": 400,
+        "wires": [
+            [
+                "edbff8c8d4368803",
+                "0535c74ba78ee8c5"
+            ]
+        ]
+    },
+    {
+        "id": "edbff8c8d4368803",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Power Out",
+        "mode": "link",
+        "links": [
+            "9448c79db64f267c",
+            "f2257a888071a358"
+        ],
+        "x": 2025,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "528b34be6963a2ac",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "check",
+        "func": "if (global.get(\"fire\") == undefined) {\n  global.set(\"fire\", false);\n}\nif (global.get(\"fire\") == true){\n    global.set(\"fire\", false);\n    node.send(msg);\n}\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2250,
+        "y": 420,
+        "wires": [
+            [
+                "0bd17a969684144f"
+            ]
+        ]
+    },
+    {
+        "id": "9f4915dcd910deff",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "links": [
+            "398f1ff76819bbdd"
+        ],
+        "x": 2155,
+        "y": 420,
+        "wires": [
+            [
+                "528b34be6963a2ac"
+            ]
+        ]
+    },
+    {
+        "id": "0bd17a969684144f",
+        "type": "rpi-gpio out",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "pin": "24",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 2400,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "0535c74ba78ee8c5",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2200,
+        "y": 480,
+        "wires": [
+            [
+                "0bd17a969684144f",
+                "eb3ee7e8507a7e19"
+            ]
+        ]
+    },
+    {
+        "id": "eb3ee7e8507a7e19",
+        "type": "delay",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 2190,
+        "y": 560,
+        "wires": [
+            [
+                "ad7471d5e31b01e7"
+            ]
+        ]
+    },
+    {
+        "id": "ad7471d5e31b01e7",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2360,
+        "y": 560,
+        "wires": [
+            [
+                "0bd17a969684144f"
+            ]
+        ]
+    },
+    {
+        "id": "e7e4f51990389e5f",
+        "type": "ui_toast",
+        "z": "d36d8b6db990182d",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "raw": false,
+        "className": "",
+        "topic": "Warning",
+        "name": "",
+        "x": 410,
+        "y": 1440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d9cd3291d697eb5",
+        "type": "ui_toast",
+        "z": "d36d8b6db990182d",
+        "position": "dialog",
+        "displayTime": "5",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "raw": false,
+        "className": "",
+        "topic": "Warning",
+        "name": "",
+        "x": 390,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "69d38e96e829e862",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "create message",
+        "func": "var s = (new Date()).toTimeString().substr(0,8);\nmsg.payload = \"A motion is detected by motion sensor 1\";\nmsg.topic = \"Motion Detected\";\nmsg.email = \"A motion was detected by motion sensor 1 at \" + s;\nglobal.set(\"motion01\", true);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 1280,
+        "wires": [
+            [
+                "4d9cd3291d697eb5",
+                "f6e6f0c4cf60bbae",
+                "38b49da82150927e",
+                "8bdda53dbc1c4aa0"
+            ]
+        ]
+    },
+    {
+        "id": "2ea87b0f00af7725",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "create message",
+        "func": "var s = (new Date()).toTimeString().substr(0,8);\nmsg.payload = \"A motion is detected by motion sensor 2\";\nmsg.topic = \"Motion Detected\";\nmsg.email = \"A motion was detected by motion sensor 2 at \" + s;\nglobal.set(\"motion02\", true);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 1440,
+        "wires": [
+            [
+                "e7e4f51990389e5f",
+                "f6e6f0c4cf60bbae",
+                "bf8569c34298aed9",
+                "06125d60ad7d6a4e"
+            ]
+        ]
+    },
+    {
+        "id": "3be92e9fc90737df",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Motion 01 Notify",
+        "links": [
+            "fa6478956ce4607d"
+        ],
+        "x": 75,
+        "y": 1280,
+        "wires": [
+            [
+                "69d38e96e829e862"
+            ]
+        ]
+    },
+    {
+        "id": "58466b1b17a9b02e",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "Motion 02 Notify",
+        "links": [
+            "3e8415816ac0189f"
+        ],
+        "x": 75,
+        "y": 1440,
+        "wires": [
+            [
+                "2ea87b0f00af7725"
+            ]
+        ]
+    },
+    {
+        "id": "f6e6f0c4cf60bbae",
+        "type": "ui_audio",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "group": "a094c0f9e38aef50",
+        "voice": "Microsoft David - English (United States)",
+        "always": "",
+        "x": 480,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "38b49da82150927e",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Motion 01 Log",
+        "mode": "link",
+        "links": [
+            "f2257a888071a358",
+            "9448c79db64f267c"
+        ],
+        "x": 335,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "bf8569c34298aed9",
+        "type": "link out",
+        "z": "d36d8b6db990182d",
+        "name": "Motion 02 Log",
+        "mode": "link",
+        "links": [
+            "f2257a888071a358",
+            "9448c79db64f267c"
+        ],
+        "x": 345,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "5dd2c76735418d4a",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "check",
+        "func": "if (global.get(\"motion01\") == undefined) {\n  global.set(\"motion01\", false);\n}\nif (global.get(\"motion01\") == true){\n    global.set(\"motion01\", false);\n    node.send(msg);\n}\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 1160,
+        "wires": [
+            [
+                "eb7587d7444b6e9c"
+            ]
+        ]
+    },
+    {
+        "id": "82e6a5c07e1f6855",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "links": [
+            "398f1ff76819bbdd"
+        ],
+        "x": 615,
+        "y": 1160,
+        "wires": [
+            [
+                "5dd2c76735418d4a"
+            ]
+        ]
+    },
+    {
+        "id": "eb7587d7444b6e9c",
+        "type": "rpi-gpio out",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "pin": "25",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 860,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "8bdda53dbc1c4aa0",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 1220,
+        "wires": [
+            [
+                "eb7587d7444b6e9c",
+                "8573c7837da8c09e"
+            ]
+        ]
+    },
+    {
+        "id": "8573c7837da8c09e",
+        "type": "delay",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 650,
+        "y": 1300,
+        "wires": [
+            [
+                "b94cfea8d3846ee1"
+            ]
+        ]
+    },
+    {
+        "id": "b94cfea8d3846ee1",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 1300,
+        "wires": [
+            [
+                "eb7587d7444b6e9c"
+            ]
+        ]
+    },
+    {
+        "id": "264eec1c5652daa9",
+        "type": "function",
+        "z": "d36d8b6db990182d",
+        "name": "check",
+        "func": "if (global.get(\"motion02\") == undefined) {\n  global.set(\"motion02\", false);\n}\nif (global.get(\"motion02\") == true){\n    global.set(\"motion02\", false);\n    node.send(msg);\n}\nreturn;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 1420,
+        "wires": [
+            [
+                "1648879961e2f7e6"
+            ]
+        ]
+    },
+    {
+        "id": "053b53d081bba58a",
+        "type": "link in",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "links": [
+            "398f1ff76819bbdd"
+        ],
+        "x": 615,
+        "y": 1420,
+        "wires": [
+            [
+                "264eec1c5652daa9"
+            ]
+        ]
+    },
+    {
+        "id": "1648879961e2f7e6",
+        "type": "rpi-gpio out",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "pin": "8",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 860,
+        "y": 1480,
+        "wires": []
+    },
+    {
+        "id": "06125d60ad7d6a4e",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 1480,
+        "wires": [
+            [
+                "1648879961e2f7e6",
+                "db7aa28ce9a42ad8"
+            ]
+        ]
+    },
+    {
+        "id": "db7aa28ce9a42ad8",
+        "type": "delay",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 650,
+        "y": 1560,
+        "wires": [
+            [
+                "e389c6a956d2a9e5"
+            ]
+        ]
+    },
+    {
+        "id": "e389c6a956d2a9e5",
+        "type": "change",
+        "z": "d36d8b6db990182d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 1560,
+        "wires": [
+            [
+                "1648879961e2f7e6"
+            ]
+        ]
+    },
+    {
+        "id": "6bfbc17bb5f36bd0",
+        "type": "ui_spacer",
+        "z": "d36d8b6db990182d",
+        "name": "spacer",
+        "group": "a094c0f9e38aef50",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0f4e6306faa53fad",
+        "type": "ui_spacer",
+        "z": "d36d8b6db990182d",
+        "name": "spacer",
+        "group": "a094c0f9e38aef50",
+        "order": 7,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "860dcb397267b5a2",
+        "type": "ui_spacer",
+        "z": "d36d8b6db990182d",
+        "name": "spacer",
+        "group": "a094c0f9e38aef50",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "94c00a01ae839668",
+        "type": "ui_spacer",
+        "z": "d36d8b6db990182d",
+        "name": "spacer",
+        "group": "a336382dc7a34e40",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "39beb09572ec7c11",
+        "type": "ui_spacer",
+        "z": "d36d8b6db990182d",
+        "name": "spacer",
+        "group": "a336382dc7a34e40",
+        "order": 7,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "7b486e8ecefd1be1",
+        "type": "ui_spacer",
+        "z": "d36d8b6db990182d",
+        "name": "spacer",
+        "group": "a336382dc7a34e40",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "895c84d07b2d040b",
+        "type": "ui_spacer",
+        "z": "d36d8b6db990182d",
+        "name": "spacer",
+        "group": "6786c147f8d470f4",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "568711668c4081ac",
+        "type": "ui_spacer",
+        "z": "d36d8b6db990182d",
+        "name": "spacer",
+        "group": "6786c147f8d470f4",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9a3d72d989523860",
+        "type": "ui_spacer",
+        "z": "d36d8b6db990182d",
+        "name": "spacer",
+        "group": "560f8fd85a941b67",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "6cbc366a4e0237ec",
+        "type": "ui_spacer",
+        "z": "d36d8b6db990182d",
+        "name": "spacer",
+        "group": "560f8fd85a941b67",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4164f5e38adaeed0",
+        "type": "ui_spacer",
+        "z": "d36d8b6db990182d",
+        "name": "spacer",
+        "group": "a3a1faa40525caa7",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b396e71ab28cc595",
+        "type": "ui_spacer",
+        "z": "d36d8b6db990182d",
+        "name": "spacer",
+        "group": "a3a1faa40525caa7",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b29c7b4cc4edeb3c",
+        "type": "ui_spacer",
+        "z": "d36d8b6db990182d",
+        "name": "spacer",
+        "group": "b8630066.5d446",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5f99b53ac3b035c6",
+        "type": "ui_spacer",
+        "z": "d36d8b6db990182d",
+        "name": "spacer",
+        "group": "b8630066.5d446",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "50043083ec2e0868",
+        "type": "mqtt-broker",
+        "name": "Group 14",
+        "broker": "5g-vue.projects.uom.lk",
+        "port": "1883",
+        "clientid": "group_14",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a336382dc7a34e40",
+        "type": "ui_group",
+        "name": "Humidity",
+        "tab": "a424a62fdabe0935",
+        "order": 2,
+        "disp": true,
+        "width": 12,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "560f8fd85a941b67",
+        "type": "ui_group",
+        "name": "Gas",
+        "tab": "a424a62fdabe0935",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a094c0f9e38aef50",
+        "type": "ui_group",
+        "name": "Temparature",
+        "tab": "a424a62fdabe0935",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a3a1faa40525caa7",
+        "type": "ui_group",
+        "name": "Smoke",
+        "tab": "a424a62fdabe0935",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "17ad4fed28684a7f",
+        "type": "ui_group",
+        "name": "Reset",
+        "tab": "a424a62fdabe0935",
+        "order": 7,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6786c147f8d470f4",
+        "type": "ui_group",
+        "name": "Power",
+        "tab": "a424a62fdabe0935",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b8630066.5d446",
+        "type": "ui_group",
+        "name": "Log",
+        "tab": "a424a62fdabe0935",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a424a62fdabe0935",
+        "type": "ui_tab",
+        "name": "Home Dashboard",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
